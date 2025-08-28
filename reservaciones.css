@@ -1,0 +1,52 @@
+/* Tipografía y reset */
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+
+    background-image: url('fondo.jpg'); /* ruta correcta */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+
+
+
+
+
+
+
+
+.rescate-comidas {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.comida {
+  background-color: #fff;
+  color: #000;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  width: 200px;
+}
+
+.comida img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+a {
+  color: #00ccff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

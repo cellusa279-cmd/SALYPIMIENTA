@@ -1,0 +1,395 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sal y Pimienta - Inicio</title>
+    <link rel="stylesheet" href="inicio.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">Sal y Pimienta</div>
+        <nav>
+            <ul>
+                <li><a href="Inicio.Html">Inicio</a></li>
+                <li><a href="menu.html">Menú</a></li>
+                <li><a href="reservaciones.html">Reservaciones</a></li>
+                <li><a href="Galeria.html">Galería</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="Contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nosotros - Restaurante</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #000; /* fondo negro */
+      color: #fff; /* contenido blanco por defecto */
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5em;
+      margin-bottom: 30px;
+      color: #fff;
+    }
+
+    h2 {
+      margin-top: 20px;
+      margin-bottom: 10px;
+      color: #fff; /* por defecto en blanco */
+    }
+
+    /* Cuadro de misión y visión */
+    .cuadro {
+      background-color: #111; /* cuadro oscuro */
+      border: 2px solid #FFD700; /* borde dorado */
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* Visión especial dorada */
+    .visionCuadro p {
+      color: #FFD700; /* letra dorada */
+      font-family: 'Georgia', serif; /* fuente elegante tipo CART */
+      font-size: 1.5em; /* grande */
+      font-style: italic; /* opcional, cursiva elegante */
+      margin: 0;
+    }
+
+    p {
+      font-size: 1.1em;
+      line-height: 1.5em;
+      margin: 0;
+    }
+
+    /* Encuesta de sugerencias */
+    .encuestaSugerencias {
+      background-color: #111;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 600px;
+      margin: 20px auto;
+    }
+
+    .encuestaSugerencias h2 {
+      text-align: center;
+    }
+
+    .encuestaSugerencias input,
+    .encuestaSugerencias textarea,
+    .encuestaSugerencias select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 1px solid #FFD700;
+      background-color: #000;
+      color: #FFD700;
+    }
+
+    .encuestaSugerencias button {
+      background-color: #FFD700;
+      color: #000;
+      border: none;
+      padding: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      width: 100%;
+    }
+
+    .encuestaSugerencias button:hover {
+      background-color: #e6c200;
+    }
+
+    /* Lista de sugerencias */
+    #sugerenciasLista {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #111;
+      border-radius: 10px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .sugerenciaItem {
+      border-bottom: 1px solid #FFD700;
+      padding: 10px 0;
+    }
+
+    .sugerenciaItem:last-child {
+      border-bottom: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Nosotros</h1>
+
+  <!-- Misión -->
+  <div class="cuadro mision">
+    <h2>Misión</h2>
+    <p>
+      Brindar experiencias gastronómicas únicas, con platos de calidad, un ambiente acogedor y un servicio excepcional para todos nuestros clientes.
+    </p>
+  </div>
+
+  <!-- Visión -->
+  <div class="cuadro vision">
+    <h2>Visión</h2>
+    <div class="visionCuadro">
+      <p>
+        Ser reconocido como el restaurante líder en innovación culinaria y atención al cliente, destacando por nuestra creatividad y pasión por la gastronomía.
+      </p>
+    </div>
+  </div>
+
+  <!-- Encuesta de sugerencias -->
+  <div class="encuestaSugerencias">
+    <h2>¡Tus sugerencias nos importan!</h2>
+    <form id="sugerenciasForm">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+
+      <label for="comentario">Sugerencia o comentario:</label>
+      <textarea id="comentario" name="comentario" rows="4" placeholder="Escribe tu sugerencia..." required></textarea>
+
+      <label for="categoria">Categoría de tu sugerencia:</label>
+      <select id="categoria" name="categoria" required>
+        <option value="">Selecciona</option>
+        <option value="Platos">Platos</option>
+        <option value="Servicio">Servicio</option>
+        <option value="Ambiente">Ambiente</option>
+        <option value="Otros">Otros</option>
+      </select>
+
+      <button type="submit">Enviar Sugerencia</button>
+    </form>
+  </div>
+
+  <!-- Lista de sugerencias enviadas -->
+  <div id="sugerenciasLista">
+    <h2>Sugerencias Recibidas</h2>
+  </div>
+
+  <script>
+    const sugerenciasForm = document.getElementById("sugerenciasForm");
+    const sugerenciasLista = document.getElementById("sugerenciasLista");
+
+    function mostrarSugerencias() {
+      const data = JSON.parse(localStorage.getItem("sugerenciasRestaurante")) || [];
+      let html = '<h2>Sugerencias Recibidas</h2>';
+      if (data.length === 0) {
+        html += "<p>Aún no hay sugerencias.</p>";
+      } else {
+        data.forEach(item => {
+          html += `
+            <div class="sugerenciaItem">
+              <p><strong>Nombre:</strong> ${item.nombre}</p>
+              <p><strong>Categoría:</strong> ${item.categoria}</p>
+              <p><strong>Comentario:</strong> ${item.comentario}</p>
+            </div>
+          `;
+        });
+      }
+      sugerenciasLista.innerHTML = html;
+    }
+
+    sugerenciasForm.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const nombre = document.getElementById("nombre").value;
+      const comentario = document.getElementById("comentario").value;
+      const categoria = document.getElementById("categoria").value;
+
+      const data = JSON.parse(localStorage.getItem("sugerenciasRestaurante")) || [];
+      data.push({ nombre, comentario, categoria });
+      localStorage.setItem("sugerenciasRestaurante", JSON.stringify(data));
+
+      sugerenciasForm.reset();
+      mostrarSugerencias();
+      alert("¡Gracias por tu sugerencia!");
+    });
+
+    // Mostrar sugerencias al cargar
+    mostrarSugerencias();
+  </script>
+
+
+<!-- 🎮 Sección del juego "Atrapa la comida" -->
+<section id="juego">
+  <h2>Atrapa la comida 🍔🥗</h2>
+  <div id="game">
+    <div id="player"></div>
+    <div id="score">Puntos: 0</div>
+    <div id="message"></div>
+  </div>
+</section>
+
+<style>
+  #juego {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px auto;
+  }
+
+  #game {
+    position: relative;
+    width: 400px;
+    height: 600px;
+    background: #fff8dc;
+    border: 5px solid #8b0000;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  }
+
+  #player {
+    position: absolute;
+    bottom: 10px;
+    left: 170px;
+    width: 60px;
+    height: 60px;
+    background: url('https://cdn-icons-png.flaticon.com/512/1046/1046784.png') no-repeat center/cover;
+  }
+
+  .food, .bad {
+    position: absolute;
+    top: 0;
+    width: 40px;
+    height: 40px;
+  }
+
+  /* Varias comidas 🍕🍔🥗 */
+  .food1 { background: url('https://cdn-icons-png.flaticon.com/512/1404/1404945.png') no-repeat center/cover; }
+  .food2 { background: url('https://cdn-icons-png.flaticon.com/512/3075/3075977.png') no-repeat center/cover; }
+  .food3 { background: url('https://cdn-icons-png.flaticon.com/512/1046/1046784.png') no-repeat center/cover; }
+
+  /* Mala comida (veneno) ❌ */
+  .bad {
+    background: url('https://cdn-icons-png.flaticon.com/512/565/565547.png') no-repeat center/cover;
+  }
+
+  #score {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #8b0000;
+  }
+
+  #message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+    background: rgba(0,0,0,0.7);
+    padding: 20px 30px;
+    border-radius: 10px;
+    display: none;
+    text-align: center;
+  }
+</style>
+
+<script>
+  const game = document.getElementById("game");
+  const player = document.getElementById("player");
+  const scoreEl = document.getElementById("score");
+  const message = document.getElementById("message");
+
+  let score = 0;
+  let playerX = 170;
+  let gameOver = false;
+  let speed = 2; // velocidad inicial
+
+  // mover jugador
+  document.addEventListener("keydown", (e) => {
+    if (gameOver) return;
+    if (e.key === "ArrowLeft" && playerX > 0) playerX -= 20;
+    if (e.key === "ArrowRight" && playerX < 340) playerX += 20;
+    player.style.left = playerX + "px";
+  });
+
+  // crear comida aleatoria
+  function createFood() {
+    if (gameOver) return;
+    const food = document.createElement("div");
+    const type = Math.random() > 0.2 ? "food" : "bad"; // 80% buena, 20% mala
+    if (type === "food") {
+      const randomFood = ["food1", "food2", "food3"];
+      food.className = "food " + randomFood[Math.floor(Math.random()*randomFood.length)];
+    } else {
+      food.className = "bad";
+    }
+    food.style.left = Math.floor(Math.random() * 360) + "px";
+    food.style.top = "0px";
+    game.appendChild(food);
+
+    let fall = setInterval(() => {
+      if (gameOver) {
+        clearInterval(fall);
+        food.remove();
+        return;
+      }
+
+      let foodY = parseInt(food.style.top);
+      food.style.top = foodY + speed + "px";
+
+      if (foodY > 560) {
+        food.remove();
+        clearInterval(fall);
+      }
+
+      let foodX = parseInt(food.style.left);
+      let playerRect = player.getBoundingClientRect();
+      let foodRect = food.getBoundingClientRect();
+
+      if (
+        foodRect.bottom > playerRect.top &&
+        foodRect.top < playerRect.bottom &&
+        foodRect.left < playerRect.right &&
+        foodRect.right > playerRect.left
+      ) {
+        if (food.classList.contains("bad")) {
+          endGame();
+        } else {
+          score++;
+          scoreEl.textContent = "Puntos: " + score;
+          speed += 0.2; // cada punto aumenta velocidad
+        }
+        food.remove();
+        clearInterval(fall);
+      }
+    }, 20);
+  }
+
+  function endGame() {
+    gameOver = true;
+    message.innerHTML = "😢 Perdiste<br>Puntaje: " + score;
+    message.style.display = "block";
+  }
+
+  setInterval(createFood, 1500);
+</script>
+

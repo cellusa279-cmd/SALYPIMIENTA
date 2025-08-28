@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reservaciones - Sal y Pimienta</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: #000;
+      color: #fff;
+      padding-top: 90px; /* espacio para que el navbar fijo no tape el formulario */
+    }
+
+   /* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px; /* espacio suficiente a los lados */
+    background: rgba(0, 0, 0, 0.85);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    box-sizing: border-box;
+}
+
+.navbar .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2em;
+    font-weight: bold;
+    color: gold;
+}
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;          /* espacio entre palabras */
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;     /* permite que se ajusten en pantallas más pequeñas */
+}
+
+.navbar nav ul li a {
+    color: gold !important;      /* letras doradas */
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.navbar nav ul li a:hover {
+    color: white !important;
+}
+
+
+
+
+    /* 🔹 Sección del formulario */
+    .form-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 20px;
+    }
+    .form-container {
+      background: #0d0d0d;
+      border: 2px solid #d4af37;
+      padding: 30px;
+      border-radius: 20px;
+      width: 350px;
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+    }
+    h1 {
+      text-align: center;
+      color: #d4af37;
+      margin-bottom: 20px;
+      font-size: 22px;
+    }
+    label {
+      font-weight: bold;
+      margin-top: 10px;
+      display: block;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #d4af37;
+      border-radius: 8px;
+      background: #1a1a1a;
+      color: #fff;
+    }
+    button {
+      width: 100%;
+      background: #d4af37;
+      color: #000;
+      border: none;
+      padding: 12px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #ffd700;
+      transform: scale(1.03);
+      box-shadow: 0 0 10px #ffd700;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🔹 Navbar -->
+  <header class="navbar">
+    <div class="logo">Sal y Pimienta</div>
+    <nav>
+      <ul>
+        <li><a href="inicio.html">Inicio</a></li>
+        <li><a href="menu.html">Menú</a></li>
+        <li><a href="reservaciones.html">Reservaciones</a></li>
+        <li><a href="galeria.html">Galería</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="Contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 🔹 Formulario de Reservaciones -->
+  <section class="form-section">
+    <div class="form-container">
+      <h1>Reservaciones</h1>
+      <form action="mailto:cellusa279@gmail.com" method="post" enctype="text/plain">
+        
+        <label>Nombre:</label>
+        <input type="text" name="Nombre" required>
+
+        <label>Correo:</label>
+        <input type="email" name="Correo" required>
+
+        <label>Teléfono:</label>
+        <input type="tel" name="Teléfono" required>
+
+        <label>Fecha de la reserva:</label>
+        <input type="date" name="Fecha" required>
+
+        <label>Hora:</label>
+        <input type="time" name="Hora" required>
+
+        <label>Número de personas:</label>
+        <select name="Personas" required>
+          <option value="">Selecciona…</option>
+          <option>1</option><option>2</option><option>3</option>
+          <option>4</option><option>5</option><option>6</option>
+          <option>7+</option>
+        </select>
+
+        <label>Mensaje:</label>
+        <textarea name="Mensaje" rows="3"></textarea>
+
+        <button type="submit">Enviar Reserva</button>
+      </form>
+    </div>
+  </section>
+
+
+
+<!-- 🔹 Valoración -->
+<section class="rating-section">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Valoración - Sal y Pimienta</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body{font-family:'Segoe UI',sans-serif;background:#111;color:#fff;margin:0;padding:40px}
+    h2{text-align:center;color:#f5c542;margin-bottom:30px;font-size:28px}
+    .container{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+    .card{background:#1a1a1a;padding:20px;border-radius:15px;box-shadow:0 4px 15px rgba(255,215,0,.2)}
+    .stars{display:flex;justify-content:center;margin:15px 0;cursor:pointer}
+    .star{font-size:35px;color:#555;transition:.3s}
+    .star.selected{color:#f5c542;text-shadow:0 0 10px #f5c542}
+    textarea{width:100%;height:60px;border-radius:8px;border:none;padding:10px;margin-top:10px;font-size:14px;resize:none}
+    button{margin-top:10px;padding:10px 20px;background:#f5c542;border:none;border-radius:8px;font-weight:700;cursor:pointer;transition:.3s}
+    button:hover{background:#ffd700;box-shadow:0 0 10px #ffd700}
+    .reviews{margin-top:20px;max-height:200px;overflow-y:auto}
+    .review{background:#222;padding:10px;border-radius:8px;margin-bottom:10px}
+    .review strong{color:#f5c542}
+    canvas{background:#111;border-radius:15px;padding:15px}
+    @media (max-width:900px){.container{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <h2>⭐ Valoración de la experiencia en Sal y Pimienta</h2>
+
+  <div class="container">
+    <!-- Cuadro Izquierdo -->
+    <div class="card">
+      <h3>Tu valoración</h3>
+      <div class="stars" id="stars">
+        <span class="star" data-value="1">★</span>
+        <span class="star" data-value="2">★</span>
+        <span class="star" data-value="3">★</span>
+        <span class="star" data-value="4">★</span>
+        <span class="star" data-value="5">★</span>
+      </div>
+
+      <textarea id="comentario" placeholder="Escribe tu experiencia..."></textarea>
+      <button id="enviar">Enviar valoración</button>
+
+      <h4 style="margin-top:20px;">Opiniones de clientes:</h4>
+      <div class="reviews" id="reviews"></div>
+    </div>
+
+    <!-- Cuadro Derecho -->
+    <div class="card">
+      <h3>📊 Estadísticas de Valoraciones</h3>
+      <canvas id="chart" height="250"></canvas>
+    </div>
+  </div>
+
+  <script>
+    // Referencias
+    const stars = document.querySelectorAll('.star');
+    const reviewsDiv = document.getElementById('reviews');
+    const comentarioInput = document.getElementById('comentario');
+    const enviarBtn = document.getElementById('enviar');
+
+    // Estado
+    let selectedRating = 0;
+    const ratings = [0, 0, 0, 0, 0]; // votos para 1..5 ⭐
+
+    // Gráfico
+    const ctx = document.getElementById('chart').getContext('2d');
+    const chart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['1 ⭐', '2 ⭐', '3 ⭐', '4 ⭐', '5 ⭐'],
+        datasets: [{
+          label: 'Votos',
+          data: ratings,
+          backgroundColor: 'rgba(245, 197, 66, 0.85)',
+          borderColor: '#f5c542',
+          borderWidth: 2,
+          borderRadius: 8
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: { legend: { labels: { color: '#fff' } } },
+        scales: {
+          x: { ticks: { color: '#fff' }, grid: { color: '#333' } },
+          y: { ticks: { color: '#fff' }, grid: { color: '#333' }, beginAtZero: true }
+        }
+      }
+    });
+
+    // Selección de estrellas
+    stars.forEach(star => {
+      star.addEventListener('click', () => {
+        selectedRating = parseInt(star.getAttribute('data-value'), 10);
+        stars.forEach(s => s.classList.remove('selected'));
+        for (let i = 0; i < selectedRating; i++) stars[i].classList.add('selected');
+      });
+    });
+
+    // Enviar valoración
+    enviarBtn.addEventListener('click', () => {
+      const texto = comentarioInput.value.trim();
+      if (selectedRating === 0 || texto === '') {
+        alert('Selecciona una puntuación y escribe un comentario.');
+        return;
+      }
+
+      // Crear la reseña (SIN backticks, para evitar errores de comillas)
+      const review = document.createElement('div');
+      review.className = 'review';
+      review.innerHTML = '<strong>' + selectedRating + ' ⭐</strong> - ' + texto;
+      reviewsDiv.prepend(review);
+
+      // Actualizar gráfico
+      ratings[selectedRating - 1]++;
+      chart.update();
+
+      // Reset
+      comentarioInput.value = '';
+      stars.forEach(s => s.classList.remove('selected'));
+      selectedRating = 0;
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+    <!-- Comida para rescatar -->
+     
+    <section class="rescatar">
+        <link rel="stylesheet" href="reservaciones.css">
+      <h2>¡Rescata comida deliciosa hoy!</h2>
+      <div class="rescate-comidas">
+        <div class="comida">
+          <img src="postre1.jpg" alt="Pastel de chocolate">
+          <p>Pastel de Chocolate</p>
+          <p>Antes L.120</p>
+          <p>Ahora L.60</p>
+        </div>
+        <div class="comida">
+          <img src="comida1.jpg" alt="Pollo a la parrilla">
+          <p>Pollo a la parrilla</p>
+           <p>Antes L.280</p>
+          <p>Ahora L.100</p>
+        </div>
+        <div class="comida">
+          <img src="Comida3.jpg" alt="Ensalada Cesar">
+          <p>Ensalada Cesar</p>
+           <p>Antes L.200</p>
+          <p>Ahora L.90</p>
+        </div>
+      </div>
+      <p><a href="https://toogoodtogo.com" target="_blank">Visita Too Good To Go para más comida rescatada</a></p>
+    </section>
+  </main>

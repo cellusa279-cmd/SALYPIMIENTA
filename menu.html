@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Menú - Sal y Pimienta</title>
+  <link rel="stylesheet" href="menu.css">
+  <link rel="stylesheet" href="menu.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+ <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">Sal y Pimienta</div>
+        <nav>
+            <ul>
+                <li><a href="Inicio.Html">Inicio</a></li>
+                <li><a href="menu.html">Menú</a></li>
+                <li><a href="reservaciones.html">Reservaciones</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="Contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+
+
+
+
+  <!-- Contenido del Menú -->
+  <section class="menu-vertical">
+    <h1>Bienvenido al Menú</h1>
+    <p class="frase">"Una experiencia con Sal y Pimienta que no olvidarás."</p>
+
+    <!-- Comida -->
+    <div class="item-menu">
+      <input type="checkbox" id="comida">
+      <label for="comida">Comida</label>
+      <div class="contenido-menu">
+        <div class="platillos-grid">
+          <div class="platillo">
+            <img src="comida1.jpg" alt="Plato 1">
+            <p>Pollo a la plancha - L. 280.00</p>
+          </div>
+          <div class="platillo">
+            <img src="comida2.jpg" alt="Plato 2">
+            <p>Lasaña de carne - L. 340.00</p>
+          </div>
+          <div class="platillo">
+            <img src="comida3.jpg" alt="Plato 3">
+            <p>Ensalada César - L. 200.00</p>
+          </div>
+          <div class="platillo">
+            <img src="comida4.jpg" alt="Plato 4">
+            <p>Tacos al pastor - L. 260.00</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Postres -->
+    <div class="item-menu">
+      <input type="checkbox" id="postres">
+      <label for="postres">Postres</label>
+      <div class="contenido-menu">
+        <div class="platillos-grid">
+          <div class="platillo">
+            <img src="postre1.jpg" alt="Postre 1">
+            <p>Pastel de chocolate - L. 120.00</p>
+          </div>
+          <div class="platillo">
+            <img src="postre2.jpg" alt="Postre 2">
+            <p>Flan napolitano - L. 110.00</p>
+          </div>
+          <div class="platillo">
+            <img src="postre3.jpg" alt="Postre 3">
+            <p>Helado artesanal - L. 90.00</p>
+          </div>
+          <div class="platillo">
+            <img src="postre4.jpg" alt="Postre 4">
+            <p>Cheesecake - L. 130.00</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bebidas -->
+    <div class="item-menu">
+      <input type="checkbox" id="bebidas">
+      <label for="bebidas">Bebidas</label>
+      <div class="contenido-menu">
+        <div class="platillos-grid">
+          <div class="platillo">
+            <img src="bebida1.jpg" alt="Bebida 1">
+            <p>Jugo natural - L. 60.00</p>
+          </div>
+          <div class="platillo">
+            <img src="bebida2.jpg" alt="Bebida 2">
+            <p>Refresco - L. 40.00</p>
+          </div>
+          <div class="platillo">
+            <img src="bebida3.jpg" alt="Bebida 3">
+            <p>Café - L. 35.00</p>
+          </div>
+          <div class="platillo">
+            <img src="bebida5.jpg" alt="Bebida 4">
+            <p>Té helado - L. 45.00</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Carrito | Restaurante</title>
+<style>
+  :root{
+    --bg:#0f1115; --card:#161a22; --soft:#212736; --accent:#2ecc71;
+    --text:#e9eef5; --muted:#a8b3c7; --danger:#ff4d4f; --radius:18px;
+  }
+  *{box-sizing:border-box}  body{margin:0; font-family: Arial, sans-serif;
+    background:linear-gradient(180deg,var(--bg),#0b0d11 70%); color:var(--text);}
+  header{position:sticky; top:0; z-index:10; backdrop-filter: blur(8px);
+    background:rgba(15,17,21,.6); border-bottom:1px solid #20242f;}
+  .wrap{max-width:1080px; margin:0 auto; padding:18px;}
+  h1{margin:0; font-size:28px;}
+  .grid{display:grid; gap:18px; grid-template-columns:1fr;}
+  @media(min-width:880px){.grid{grid-template-columns:1.2fr .8fr;}}
+  .card{background:var(--card); border:1px solid #20242f; border-radius:var(--radius);
+    box-shadow:0 10px 30px rgba(0,0,0,.35);}
+  .card .inner{padding:18px;}
+  .menu{display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:14px;}
+  .item{background:var(--soft); border:1px solid #273049; border-radius:16px; padding:14px; display:flex; flex-direction:column; gap:8px;}
+  .item h3{margin:0; font-size:18px;} .muted{color:var(--muted); font-size:13px;}
+  .price{font-weight:700;} .row{display:flex; align-items:center; justify-content:space-between;}
+  .btn{border:none; border-radius:12px; padding:8px 12px; cursor:pointer; font-weight:600;}
+  .btn-add{background:var(--accent); color:#082410;} .btn-danger{background:var(--danger); color:white;}
+  .btn-icon{width:30px; height:30px; display:grid; place-items:center; border-radius:10px; border:1px solid #2b3347; background:#1a2130; color:white;}
+  .cart-list{display:flex; flex-direction:column; gap:10px; margin-top:8px;}
+  .cart-row{background:var(--soft); border:1px solid #273049; border-radius:14px; padding:10px;
+    display:grid; grid-template-columns:1fr auto; gap:10px; align-items:center;}
+  .qty{display:flex; align-items:center; gap:8px;}
+  .pill{min-width:28px; text-align:center; padding:4px; border-radius:10px; background:#0e1422; border:1px solid #2b3347;}
+  .totals{display:flex; justify-content:space-between; align-items:center; margin-top:14px; padding-top:12px; border-top:1px dashed #2b3347;}
+  .total-num{font-weight:800; font-size:20px;} .actions{display:flex; gap:10px; margin-top:12px;}
+  .alert{display:none; margin-top:12px; padding:12px; border-radius:12px; background:#0e1a12; border:1px solid #224b33; color:#c9f5db;}
+  .empty{text-align:center; color:var(--muted); padding:14px; border:1px dashed #2b3347; border-radius:12px; margin-top:8px;}
+  .badge{background:#0f1a2b; color:#a8c3ff; border:1px solid #23365d; border-radius:999px; padding:4px 10px; font-size:12px; font-weight:600;}
+  footer{opacity:.7; font-size:12px; text-align:center; padding:28px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap" style="display:flex; justify-content:space-between; align-items:center;">
+    <h1>Menú · Restaurante</h1>
+    <span class="badge" id="badge-items">Carrito (0)</span>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="grid">
+    <!-- MENÚ (estático para que siempre se vea) -->
+    <section class="card">
+      <div class="inner">
+        <h2 style="margin:0 0 10px">Platillos</h2>
+        <p class="muted" style="margin:0 0 14px">Agrega lo que desees. Los precios están en Lempiras (L).</p>
+
+        <div class="menu">
+          <div class="item">
+            <h3>Hamburguesa</h3>
+            <p class="muted">Pan artesanal, carne 1/4 lb, vegetales</p>
+            <div class="row">
+              <span class="price">L. 50</span>
+              <button class="btn btn-add" onclick="addToCart('Hamburguesa',50)">Agregar</button>
+            </div>
+          </div>
+
+          <div class="item">
+            <h3>Pizza Individual</h3>
+            <p class="muted">Pepperoni y queso mozzarella</p>
+            <div class="row">
+              <span class="price">L. 80</span>
+              <button class="btn btn-add" onclick="addToCart('Pizza Individual',80)">Agregar</button>
+            </div>
+          </div>
+
+          <div class="item">
+            <h3>Baleada Especial</h3>
+            <p class="muted">Frijoles, huevo, aguacate y queso</p>
+            <div class="row">
+              <span class="price">L. 35</span>
+              <button class="btn btn-add" onclick="addToCart('Baleada Especial',35)">Agregar</button>
+            </div>
+          </div>
+
+          <div class="item">
+            <h3>Pollo Frito</h3>
+            <p class="muted">2 piezas + papas</p>
+            <div class="row">
+              <span class="price">L. 95</span>
+              <button class="btn btn-add" onclick="addToCart('Pollo Frito',95)">Agregar</button>
+            </div>
+          </div>
+
+          <div class="item">
+            <h3>Refresco</h3>
+            <p class="muted">350 ml</p>
+            <div class="row">
+              <span class="price">L. 20</span>
+              <button class="btn btn-add" onclick="addToCart('Refresco',20)">Agregar</button>
+            </div>
+          </div>
+
+          <div class="item">
+            <h3>Café</h3>
+            <p class="muted">Tostado medio</p>
+            <div class="row">
+              <span class="price">L. 25</span>
+              <button class="btn btn-add" onclick="addToCart('Café',25)">Agregar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CARRITO -->
+    <aside class="card">
+      <div class="inner">
+        <h2 style="margin:0 0 10px">Tu carrito</h2>
+        <div id="cart-list" class="cart-list"></div>
+        <div id="empty" class="empty">Tu carrito está vacío.</div>
+
+        <div class="totals">
+          <span class="muted">Total</span>
+          <span class="total-num" id="total">L. 0</span>
+        </div>
+        <div class="actions">
+          <button class="btn btn-danger" onclick="clearCart()">Vaciar</button>
+          <button class="btn btn-add" onclick="sendWhatsApp()">Enviar a WhatsApp</button>
+        </div>
+        <div class="alert" id="alert-success">✅ ¡Pedido enviado! Te contactaremos por WhatsApp.</div>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer>
+  <span class="muted">Sal y Pimienta te espera.</span>
+</footer>
+
+<script>
+  // === CONFIGURACIÓN ===
+  var WHATSAPP_NUMBER = "50499146619"; // +504 9914-6619
+
+  // === ESTADO DEL CARRITO (súper simple y compatible) ===
+  var cartItems = {}; // nombre -> {price, qty}
+
+  function formatL(n){ return "L. " + n; }
+
+  function addToCart(name, price){
+    if(!cartItems[name]) cartItems[name] = { price: price, qty: 0 };
+    cartItems[name].qty += 1;
+    document.getElementById('alert-success').style.display = 'none';
+    renderCart();
+  }
+
+  function changeQty(name, delta){
+    if(!cartItems[name]) return;
+    cartItems[name].qty += delta;
+    if(cartItems[name].qty <= 0){ delete cartItems[name]; }
+    renderCart();
+  }
+
+  function removeItem(name){
+    delete cartItems[name];
+    renderCart();
+  }
+
+  function clearCart(){
+    cartItems = {};
+    renderCart();
+    document.getElementById('alert-success').style.display = 'none';
+  }
+
+  function renderCart(){
+    var list = document.getElementById('cart-list');
+    list.innerHTML = "";
+    var empty = document.getElementById('empty');
+    var totalEl = document.getElementById('total');
+    var badge = document.getElementById('badge-items');
+
+    var total = 0;
+    var count = 0;
+
+    for(var name in cartItems){
+      if(!cartItems.hasOwnProperty(name)) continue;
+      var item = cartItems[name];
+      var sub = item.price * item.qty;
+      total += sub;
+      count += item.qty;
+
+      var row = document.createElement('div');
+      row.className = 'cart-row';
+      row.innerHTML =
+        '<div>' +
+          '<strong>' + name + '</strong>' +
+          '<div class="muted">' + formatL(item.price) + ' c/u · Subtotal: ' + formatL(sub) + '</div>' +
+        '</div>' +
+        '<div class="qty">' +
+          '<button class="btn-icon" onclick="changeQty(\''+ name.replace(/'/g,"\\'") +'\',-1)">-</button>' +
+          '<span class="pill">' + item.qty + '</span>' +
+          '<button class="btn-icon" onclick="changeQty(\''+ name.replace(/'/g,"\\'") +'\',1)">+</button>' +
+          '<button class="btn btn-danger" onclick="removeItem(\''+ name.replace(/'/g,"\\'") +'\')">Eliminar</button>' +
+        '</div>';
+
+      list.appendChild(row);
+    }
+
+    empty.style.display = (count === 0) ? 'block' : 'none';
+    totalEl.textContent = formatL(total);
+    badge.textContent = 'Carrito (' + count + ')';
+  }
+
+  function sendWhatsApp(){
+    // Popups a veces se bloquean: si no abre, habilita ventanas emergentes
+    var keys = Object.keys(cartItems);
+    if(keys.length === 0){
+      alert('Tu carrito está vacío.');
+      return;
+    }
+
+    var msg = "Hola, quiero hacer este pedido:\n";
+    var total = 0;
+    for(var i=0;i<keys.length;i++){
+      var name = keys[i];
+      var it = cartItems[name];
+      var sub = it.price * it.qty;
+      total += sub;
+      msg += "• " + name + " x" + it.qty + " — " + formatL(sub) + "\n";
+    }
+    msg += "\nTotal: " + formatL(total);
+
+    var url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(msg);
+    window.open(url, "_blank");
+
+    // Confirmación y limpiar
+    clearCart();
+    document.getElementById('alert-success').style.display = 'block';
+  }
+
+  // Render inicial
+  renderCart();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Trivia - Sal y Pimienta</title>
+<style>
+    body {
+        background-color: #000;
+        font-family: 'Segoe UI', sans-serif;
+        color: white;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+.options {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* espacio entre botones */
+    flex-wrap: wrap; /* por si no caben en una sola línea en pantallas pequeñas */
+}
+.options button {
+    flex: 1 1 auto;
+    min-width: 150px;
+}
+
+
+    h2 {
+        color: gold;
+        margin-top: 20px;
+    }
+    .quiz-container {
+        max-width: 900px;
+        margin: auto;
+        padding: 20px;
+        background: rgba(255, 215, 0, 0.05);
+        border: 2px solid gold;
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    }
+    .question {
+        margin: 20px 0;
+        font-size: 1.2em;
+    }
+    .options button {
+        display: block;
+        margin: 8px auto;
+        padding: 10px;
+        border: 2px solid gold;
+        background: black;
+        color: white;
+        font-size: 1em;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .options button:hover {
+        background: gold;
+        color: black;
+    }
+    .correct {
+        animation: correctGlow 0.6s ease;
+        border-color: gold;
+    }
+    .incorrect {
+        animation: incorrectShake 0.6s ease;
+        border-color: red;
+    }
+    @keyframes correctGlow {
+        0% { box-shadow: 0 0 5px gold; }
+        50% { box-shadow: 0 0 20px gold; }
+        100% { box-shadow: 0 0 5px gold; }
+    }
+    @keyframes incorrectShake {
+        0%, 100% { transform: translateX(0); }
+        25% { transform: translateX(-5px); }
+        50% { transform: translateX(5px); }
+        75% { transform: translateX(-5px); }
+    }
+    .btn-resultados {
+        margin-top: 20px;
+        padding: 12px 20px;
+        background: gold;
+        border: none;
+        border-radius: 10px;
+        color: black;
+        font-size: 1.1em;
+        cursor: pointer;
+    }
+    /* Modal */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 10;
+        left: 0; top: 0;
+        width: 100%; height: 100%;
+        background-color: rgba(0,0,0,0.8);
+        align-items: center;
+        justify-content: center;
+    }
+    .modal-content {
+        background: black;
+        border: 2px solid gold;
+        padding: 20px;
+        border-radius: 15px;
+        text-align: center;
+        max-width: 400px;
+        color: white;
+    }
+    .badge {
+        font-size: 3em;
+        margin-bottom: 10px;
+    }
+</style>
+</head>
+<body>
+
+<h2>TES DE PREGUNTAS PIMIENTA🍽</h2>
+<div class="quiz-container">
+    <div class="question" data-correct="B">
+        ¿Cuál es el platillo más vendido en Sal y Pimienta?
+        <div class="options">
+            <button data-option="A">Ensalada César</button>
+            <button data-option="B">Filete a la pimienta</button>
+            <button data-option="C">Pasta Alfredo</button>
+        </div>
+    </div>
+    <div class="question" data-correct="C">
+        ¿En qué año se inauguró el restaurante?
+        <div class="options">
+            <button data-option="A">2010</button>
+            <button data-option="B">2015</button>
+            <button data-option="C">2018</button>
+        </div>
+    </div>
+    <div class="question" data-correct="A">
+        ¿Qué día de la semana tenemos 2x1 en postres?
+        <div class="options">
+            <button data-option="A">Miércoles</button>
+            <button data-option="B">Viernes</button>
+            <button data-option="C">Domingo</button>
+        </div>
+    </div>
+    <button class="btn-resultados">Ver Resultados</button>
+</div>
+
+<!-- Modal -->
+<div class="modal" id="resultModal">
+    <div class="modal-content">
+        <div class="badge" id="badge"></div>
+        <h3 id="resultText"></h3>
+        <button onclick="cerrarModal()" style="background:gold; border:none; padding:8px 15px; border-radius:8px; font-size:1em;">Cerrar</button>
+    </div>
+</div>
+
+<script>
+    let score = 0;
+    let answered = {};
+
+    document.querySelectorAll(".options button").forEach(btn => {
+        btn.addEventListener("click", function() {
+            let questionDiv = this.closest(".question");
+            let correct = questionDiv.dataset.correct;
+            let option = this.dataset.option;
+            let qIndex = Array.from(document.querySelectorAll(".question")).indexOf(questionDiv);
+
+            if (answered[qIndex]) return; // No repetir respuesta
+
+            if (option === correct) {
+                this.classList.add("correct");
+                score++;
+                lanzarConfeti();
+            } else {
+                this.classList.add("incorrect");
+            }
+
+            answered[qIndex] = true;
+        });
+    });
+
+    document.querySelector(".btn-resultados").addEventListener("click", function() {
+        let modal = document.getElementById("resultModal");
+        let badgeEl = document.getElementById("badge");
+        let textEl = document.getElementById("resultText");
+
+        if (score === 3) {
+            badgeEl.textContent = "🏆";
+            textEl.textContent = "¡Perfecto! Eres un verdadero fan de Sal y Pimienta.";
+        } else if (score === 2) {
+            badgeEl.textContent = "⭐";
+            textEl.textContent = "¡Muy bien! Casi lo logras.";
+        } else {
+            badgeEl.textContent = "🥉";
+            textEl.textContent = "¡Sigue intentando! Seguro la próxima aciertas más.";
+        }
+        modal.style.display = "flex";
+    });
+
+    function cerrarModal() {
+        document.getElementById("resultModal").style.display = "none";
+        score = 0;
+        answered = {};
+        document.querySelectorAll(".options button").forEach(b => {
+            b.classList.remove("correct", "incorrect");
+        });
+    }
+
+    function lanzarConfeti() {
+        let emojis = ["✨","🎉","🥳","🍽"];
+        let emoji = emojis[Math.floor(Math.random() * emojis.length)];
+        let confeti = document.createElement("div");
+        confeti.textContent = emoji;
+        confeti.style.position = "fixed";
+        confeti.style.left = Math.random() * 100 + "vw";
+        confeti.style.top = "-2em";
+        confeti.style.fontSize = "2em";
+        confeti.style.animation = "caer 1.5s linear forwards";
+        document.body.appendChild(confeti);
+        setTimeout(() => confeti.remove(), 1500);
+    }
+
+    const style = document.createElement("style");
+    style.innerHTML = `
+    @keyframes caer {
+        to {
+            transform: translateY(100vh);
+            opacity: 0;
+        }
+    }
+    `;
+    document.head.appendChild(style);
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Video Especial - Sal y Pimienta</title>
+<style>
+    body {
+        background-color: #000;
+        font-family: 'Segoe UI', sans-serif;
+        color: white;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+    h2 {
+        color: gold;
+        margin-top: 20px;
+    }
+    .video-container {
+        margin: 30px auto;
+        max-width: 800px;
+    }
+    iframe, video {
+        width: 100%;
+        height: 450px;
+        border: 2px solid gold;
+        border-radius: 10px;
+    }
+    /* Cookie banner */
+    .cookie-banner {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0,0,0,0.9);
+        color: white;
+        text-align: center;
+        padding: 15px;
+        font-size: 1em;
+        border-top: 2px solid gold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        z-index: 1000;
+        animation: slideUp 0.5s ease;
+    }
+    .cookie-banner button {
+        background: gold;
+        border: none;
+        color: black;
+        padding: 8px 12px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+    @keyframes slideUp {
+        from { transform: translateY(100%); }
+        to { transform: translateY(0); }
+    }
+</style>
+</head>
+<body>
+
+<h2>Nuestra Especialidad 🍽</h2>
+<div class="video-container">
+    <!-- Video de YouTube -->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/32T8Oja5Yn4" 
+        title="Video de Nuestra Especialidad"
+        frameborder="0" 
+        allowfullscreen>
+    </iframe>
+</div>
+
+<!-- Cookie Banner -->
+<div class="cookie-banner" id="cookieBanner">
+    <span>📢 Este sábado, Sal y Pimienta tendrá el <b>20% de descuento</b> en todo el menú.</span>
+    <button onclick="aceptarCookie()">Entendido</button>
+</div>
+
+<script>
+    // Funciones para manejar cookies
+    function setCookie(nombre, valor, dias) {
+        const d = new Date();
+        d.setTime(d.getTime() + (dias*24*60*60*1000));
+        let expira = "expires="+ d.toUTCString();
+        document.cookie = nombre + "=" + valor + ";" + expira + ";path=/";
+    }
+
+    function getCookie(nombre) {
+        let nameEQ = nombre + "=";
+        let ca = document.cookie.split(';');
+        for(let i = 0; i < ca.length; i++) {
+            let c = ca[i].trim();
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        }
+        return "";
+    }
+
+    // Mostrar/ocultar cookie banner
+    function aceptarCookie() {
+        setCookie("promoSalYPimienta", "aceptada", 7); // Guarda por 7 días
+        document.getElementById("cookieBanner").style.display = "none";
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        if (getCookie("promoSalYPimienta") === "aceptada") {
+            document.getElementById("cookieBanner").style.display = "none";
+        }
+    });
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+<!-- ====== Sección QR: Sal y Pimienta ====== -->
+<section id="qr-salypimienta">
+  <style>
+    #qr-salypimienta {
+      --gold: #d4af37;
+      --gold-soft: rgba(212, 175, 55, 0.25);
+      --bg: #000;
+      --text: #fff;
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      padding: 40px 16px;
+    }
+    #qr-salypimienta .qr-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    #qr-salypimienta h2 {
+      text-align: center;
+      color: var(--gold);
+      margin: 0 0 10px;
+      letter-spacing: 0.5px;
+      font-size: clamp(22px, 3vw, 34px);
+    }
+    #qr-salypimienta p.sub {
+      text-align: center;
+      color: #e6e6e6;
+      margin: 0 0 28px;
+      font-size: 0.98rem;
+    }
+    /* Grid */
+    #qr-salypimienta .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+    @media (max-width: 900px) {
+      #qr-salypimienta .grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 520px) {
+      #qr-salypimienta .grid { grid-template-columns: 1fr; }
+    }
+    /* Card */
+    #qr-salypimienta .card {
+      background: rgba(255,255,255,0.02);
+      border: 1.5px solid var(--gold);
+      border-radius: 16px;
+      padding: 16px;
+      position: relative;
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+      box-shadow: 0 0 0px rgba(212,175,55,0);
+    }
+    #qr-salypimienta .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 28px var(--gold-soft), inset 0 0 18px rgba(212,175,55,0.12);
+      border-color: #ffd76a;
+    }
+    #qr-salypimienta .card h3 {
+      margin: 8px 0 6px;
+      color: var(--gold);
+      font-size: 1.05rem;
+      letter-spacing: .3px;
+    }
+    #qr-salypimienta .card p.desc {
+      margin: 0 0 10px;
+      color: #d9d9d9;
+      font-size: .92rem;
+      min-height: 40px;
+    }
+    #qr-salypimienta .qr-box {
+      background: #0a0a0a;
+      border: 1px dashed #8a6f1a;
+      border-radius: 12px;
+      padding: 10px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 12px;
+    }
+    #qr-salypimienta img.qr {
+      width: 100%;
+      max-width: 220px;
+      aspect-ratio: 1 / 1;
+      object-fit: contain;
+      filter: saturate(1.05) contrast(1.05);
+    }
+    #qr-salypimienta .btn-row {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 4px;
+    }
+    #qr-salypimienta .btn {
+      cursor: pointer;
+      border: 0;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: .92rem;
+      transition: transform .15s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+    }
+    #qr-salypimienta .btn.primary {
+      background: var(--gold);
+      color: #000;
+      box-shadow: 0 0 0 rgba(212,175,55,0);
+    }
+    #qr-salypimienta .btn.primary:hover { transform: translateY(-2px); }
+    #qr-salypimienta .btn.ghost {
+      background: transparent;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+    }
+    /* Pequeño “destello” dorado al hacer foco */
+    #qr-salypimienta .btn:focus-visible,
+    #qr-salypimienta a:focus-visible,
+    #qr-salypimienta .card:focus-within {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(212,175,55,.35);
+    }
+    /* Etiqueta URL */
+    #qr-salypimienta .mini-url {
+      font-size: .78rem;
+      color: #cfcfcf;
+      word-break: break-all;
+      opacity: .85;
+    }
+    /* Print (por si lo imprimes para poner en mesas) */
+    @media print {
+      #qr-salypimienta { padding: 0; background: #fff; color: #000; }
+      #qr-salypimienta .card { break-inside: avoid; box-shadow: none; border-color: #000; }
+      #qr-salypimienta .qr-box { border-color: #000; }
+      #qr-salypimienta .btn-row, #qr-salypimienta p.sub { display: none; }
+      #qr-salypimienta h2 { color: #000; }
+      #qr-salypimienta .card h3 { color: #000; }
+      #qr-salypimienta .mini-url { color: #000; }
+    }
+  </style>
+
+  <div class="qr-wrap">
+    <h2>Códigos QR — Sal y Pimienta</h2>
+    <p class="sub">Escanéa para ver menú, promo del 20%, ubicación y redes. ✨</p>
+
+    <div class="grid">
+      <!-- MENÚ -->
+      <article class="card">
+        <div class="qr-box">
+          <img class="qr" src="CODIGOQR1.jpg" alt="QR Menú Sal y Pimienta" loading="lazy">
+        </div>
+        <h3>📜 Nuestro WhatsApp</h3>
+        <p class="desc">Contactanos para brindarte la mejor información.</p>
+        <p class="mini-url">https://wa.me/50499146619</p>
+        <div class="btn-row">
+          <a class="btn primary" href="qr_menu.png" download>Descargar</a>
+          <button class="btn ghost" data-open="https://wa.me/50499146619">Abrir enlace</button>
+        </div>
+      </article>
+
+      <!-- PROMOCIÓN 20% -->
+      <article class="card">
+        <div class="qr-box">
+          <img class="qr" src="3.png" alt="QR Promoción 20% Sal y Pimienta" loading="lazy">
+        </div>
+        <h3>💰 Promoción 20%</h3>
+        <p class="desc">Este sábado: 20% de descuento en todo el menú. ¡Aprovecha!</p>
+        <p class="mini-url">https://turestaurante.com/promo20</p>
+        <div class="btn-row">
+          <a class="btn primary" href="qr_promocion.png" download>Descargar</a>
+          <button class="btn ghost" data-open="https://turestaurante.com/promo20">Abrir enlace</button>
+        </div>
+      </article>
+
+      <!-- UBICACIÓN -->
+      <article class="card">
+        <div class="qr-box">
+          <img class="qr" src="4.png" alt="QR Ubicación Sal y Pimienta" loading="lazy">
+        </div>
+        <h3>📍 Cómo llegar</h3>
+        <p class="desc">Abre la ubicación en Google Maps para llegar sin vueltas.</p>
+        <p class="mini-url">https://maps.app.goo.gl/DuDmofYLBp28sQQ86?g_st=aw</p>
+        <div class="btn-row">
+          <a class="btn primary" href="4.png" download>Descargar</a>
+          <button class="btn ghost" data-open="https://maps.app.goo.gl/DuDmofYLBp28sQQ86?g_st=aw">Abrir enlace</button>
+        </div>
+      </article>
+
+      <!-- INSTAGRAM -->
+      <article class="card">
+        <div class="qr-box">
+          <img class="qr" src="2.png" alt="QR Instagram Sal y Pimienta" loading="lazy">
+        </div>
+        <h3>📱 Instagram</h3>
+        <p class="desc">Síguenos para ver specials, detrás de cámaras y más.</p>
+        <p class="mini-url">https://www.instagram.com/kimberly_flores_17_?igsh=ZGVmcnI0MHBhc21u</p>
+        <div class="btn-row">
+          <a class="btn primary" href="qr_instagram.png" download>Descargar</a>
+          <button class="btn ghost" data-open="https://www.instagram.com/kimberly_flores_17_?igsh=ZGVmcnI0MHBhc21u">Abrir enlace</button>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <script>
+    // Abre los enlaces de cada tarjeta
+    document.querySelectorAll('#qr-salypimienta [data-open]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const url = e.currentTarget.getAttribute('data-open');
+        window.open(url, '_blank', 'noopener');
+      });
+    });
+  </script>
+</section>
+<!-- ====== /Sección QR ====== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

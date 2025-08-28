@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Carrito | Restaurante</title>
+<style>
+  :root{
+    --bg:#0f1115; --card:#161a22; --soft:#212736; --accent:#2ecc71;
+    --text:#e9eef5; --muted:#a8b3c7; --danger:#ff4d4f; --radius:18px;
+  }
+  *{box-sizing:border-box}  body{margin:0; font-family: Arial, sans-serif;
+    background:linear-gradient(180deg,var(--bg),#0b0d11 70%); color:var(--text);}
+  header{position:sticky; top:0; z-index:10; backdrop-filter: blur(8px);
+    background:rgba(15,17,21,.6); border-bottom:1px solid #20242f;}
+  .wrap{max-width:1080px; margin:0 auto; padding:18px;}
+  h1{margin:0; font-size:28px;}
+  .grid{display:grid; gap:18px; grid-template-columns:1fr;}
+  @media(min-width:880px){.grid{grid-template-columns:1.2fr .8fr;}}
+  .card{background:var(--card); border:1px solid #20242f; border-radius:var(--radius);
+    box-shadow:0 10px 30px rgba(0,0,0,.35);}
+  .card .inner{padding:18px;}
+  .menu{display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:14px;}
+  .item{background:var(--soft); border:1px solid #273049; border-radius:16px; padding:14px; display:flex; flex-direction:column; gap:8px;}
+  .item h3{margin:0; font-size:18px;} .muted{color:var(--muted); font-size:13px;}
+  .price{font-weight:700;} .row{display:flex; align-items:center; justify-content:space-between;}
+  .btn{border:none; border-radius:12px; padding:8px 12px; cursor:pointer; font-weight:600;}
+  .btn-add{background:var(--accent); color:#082410;} .btn-danger{background:var(--danger); color:white;}
+  .btn-icon{width:30px; height:30px; display:grid; place-items:center; border-radius:10px; border:1px solid #2b3347; background:#1a2130; color:white;}
+  .cart-list{display:flex; flex-direction:column; gap:10px; margin-top:8px;}
+  .cart-row{background:var(--soft); border:1px solid #273049; border-radius:14px; padding:10px;
+    display:grid; grid-template-columns:1fr auto; gap:10px; align-items:center;}
+  .qty{display:flex; align-items:center; gap:8px;}
+  .pill{min-width:28px; text-align:center; padding:4px; border-radius:10px; background:#0e1422; border:1px solid #2b3347;}
+  .totals{display:flex; justify-content:space-between; align-items:center; margin-top:14px; padding-top:12px; border-top:1px dashed #2b3347;}
+  .total-num{font-weight:800; font-size:20px;} .actions{display:flex; gap:10px; margin-top:12px;}
+  .alert{display:none; margin-top:12px; padding:12px; border-radius:12px; background:#0e1a12; border:1px solid #224b33; color:#c9f5db;}
+  .empty{text-align:center; color:var(--muted); padding:14px; border:1px dashed #2b3347; border-radius:12px; margin-top:8px;}
+  .badge{background:#0f1a2b; color:#a8c3ff; border:1px solid #23365d; border-radius:999px; padding:4px 10px; font-size:12px; font-weight:600;}
+  footer{opacity:.7; font-size:12px; text-align:center; padding:28px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap" style="display:flex; justify-content:space-between; align-items:center;">
+    <h1>Menú · Restaurante</h1>
+    <span class="badge" id="badge-items">Carrito (0)</span>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="grid">
+    <!-- MENÚ (estático para que siempre se vea) -->
+    <section class="card">
+      <div class="inner">
+        <h2 style="margin:0 0 10px">Platillos</h2>
+        <p class="muted" style="margin:0 0 14px">Agrega lo que desees. Los precios están en Lempiras (L).</p>
+
+        <div class="menu">
+          <div class="item">
+            <h3>Hamburguesa</h3>
+            <p class="muted">Pan artesanal, carne 1/4 lb, vegetales</p>
+            <div class="row">
+              <span class="price">L. 50</span>
+              <button class="btn btn-add" onclick="addToCart('Hamburguesa',50)">Agregar</button>
+            </div>
+          </div>
+
+          <div class="item">
+            <h3>Pizza Individual</h3>
+            <p class="muted">Pepperoni y queso mozzarella</p>
+            <div class="row">
+              <span class="price">L. 80</span>
+              <button class="btn btn-add" onclick="addToCart('Pizza Individual',80)">Agregar</button>
+            </div>
+          </div>
+
+          <div class="item">
+            <h3>Baleada Especial</h3>
+            <p class="muted">Frijoles, huevo, aguacate y queso</p>
+            <div class="row">
+              <span class="price">L. 35</span>
+              <button class="btn btn-add" onclick="addToCart('Baleada Especial',35)">Agregar</button>
+            </div>
+          </div>
+
+          <div class="item">
+            <h3>Pollo Frito</h3>
+            <p class="muted">2 piezas + papas</p>
+            <div class="row">
+              <span class="price">L. 95</span>
+              <button class="btn btn-add" onclick="addToCart('Pollo Frito',95)">Agregar</button>
+            </div>
+          </div>
+
+          <div class="item">
+            <h3>Refresco</h3>
+            <p class="muted">350 ml</p>
+            <div class="row">
+              <span class="price">L. 20</span>
+              <button class="btn btn-add" onclick="addToCart('Refresco',20)">Agregar</button>
+            </div>
+          </div>
+
+          <div class="item">
+            <h3>Café</h3>
+            <p class="muted">Tostado medio</p>
+            <div class="row">
+              <span class="price">L. 25</span>
+              <button class="btn btn-add" onclick="addToCart('Café',25)">Agregar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CARRITO -->
+    <aside class="card">
+      <div class="inner">
+        <h2 style="margin:0 0 10px">Tu carrito</h2>
+        <div id="cart-list" class="cart-list"></div>
+        <div id="empty" class="empty">Tu carrito está vacío.</div>
+
+        <div class="totals">
+          <span class="muted">Total</span>
+          <span class="total-num" id="total">L. 0</span>
+        </div>
+        <div class="actions">
+          <button class="btn btn-danger" onclick="clearCart()">Vaciar</button>
+          <button class="btn btn-add" onclick="sendWhatsApp()">Enviar a WhatsApp</button>
+        </div>
+        <div class="alert" id="alert-success">✅ ¡Pedido enviado! Te contactaremos por WhatsApp.</div>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer>
+  <span class="muted">Hecho con 💚 para tu restaurante.</span>
+</footer>
+
+<script>
+  // === CONFIGURACIÓN ===
+  var WHATSAPP_NUMBER = "50499146619"; // +504 9914-6619
+
+  // === ESTADO DEL CARRITO (súper simple y compatible) ===
+  var cartItems = {}; // nombre -> {price, qty}
+
+  function formatL(n){ return "L. " + n; }
+
+  function addToCart(name, price){
+    if(!cartItems[name]) cartItems[name] = { price: price, qty: 0 };
+    cartItems[name].qty += 1;
+    document.getElementById('alert-success').style.display = 'none';
+    renderCart();
+  }
+
+  function changeQty(name, delta){
+    if(!cartItems[name]) return;
+    cartItems[name].qty += delta;
+    if(cartItems[name].qty <= 0){ delete cartItems[name]; }
+    renderCart();
+  }
+
+  function removeItem(name){
+    delete cartItems[name];
+    renderCart();
+  }
+
+  function clearCart(){
+    cartItems = {};
+    renderCart();
+    document.getElementById('alert-success').style.display = 'none';
+  }
+
+  function renderCart(){
+    var list = document.getElementById('cart-list');
+    list.innerHTML = "";
+    var empty = document.getElementById('empty');
+    var totalEl = document.getElementById('total');
+    var badge = document.getElementById('badge-items');
+
+    var total = 0;
+    var count = 0;
+
+    for(var name in cartItems){
+      if(!cartItems.hasOwnProperty(name)) continue;
+      var item = cartItems[name];
+      var sub = item.price * item.qty;
+      total += sub;
+      count += item.qty;
+
+      var row = document.createElement('div');
+      row.className = 'cart-row';
+      row.innerHTML =
+        '<div>' +
+          '<strong>' + name + '</strong>' +
+          '<div class="muted">' + formatL(item.price) + ' c/u · Subtotal: ' + formatL(sub) + '</div>' +
+        '</div>' +
+        '<div class="qty">' +
+          '<button class="btn-icon" onclick="changeQty(\''+ name.replace(/'/g,"\\'") +'\',-1)">-</button>' +
+          '<span class="pill">' + item.qty + '</span>' +
+          '<button class="btn-icon" onclick="changeQty(\''+ name.replace(/'/g,"\\'") +'\',1)">+</button>' +
+          '<button class="btn btn-danger" onclick="removeItem(\''+ name.replace(/'/g,"\\'") +'\')">Eliminar</button>' +
+        '</div>';
+
+      list.appendChild(row);
+    }
+
+    empty.style.display = (count === 0) ? 'block' : 'none';
+    totalEl.textContent = formatL(total);
+    badge.textContent = 'Carrito (' + count + ')';
+  }
+
+  function sendWhatsApp(){
+    // Popups a veces se bloquean: si no abre, habilita ventanas emergentes
+    var keys = Object.keys(cartItems);
+    if(keys.length === 0){
+      alert('Tu carrito está vacío.');
+      return;
+    }
+
+    var msg = "Hola, quiero hacer este pedido:\n";
+    var total = 0;
+    for(var i=0;i<keys.length;i++){
+      var name = keys[i];
+      var it = cartItems[name];
+      var sub = it.price * it.qty;
+      total += sub;
+      msg += "• " + name + " x" + it.qty + " — " + formatL(sub) + "\n";
+    }
+    msg += "\nTotal: " + formatL(total);
+
+    var url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(msg);
+    window.open(url, "_blank");
+
+    // Confirmación y limpiar
+    clearCart();
+    document.getElementById('alert-success').style.display = 'block';
+  }
+
+  // Render inicial
+  renderCart();
+</script>
+
+</body>
+</html>

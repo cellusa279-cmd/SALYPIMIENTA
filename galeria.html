@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sal y Pimienta - Inicio</title>
+    <link rel="stylesheet" href="galeria.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">Sal y Pimienta</div>
+        <nav>
+            <ul>
+                <li><a href="index.Html">Inicio</a></li>
+                <li><a href="menu.html">Menú</a></li>
+                <li><a href="reservaciones.html">Reservaciones</a></li>
+                <li><a href="Galeria.html">Galería</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="Contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+  <main>
+    <h1 class="titulo-principal">.</h1>
+
+    <!-- Imágenes del restaurante -->
+    <section class="imagenes-restaurante">
+      <img src="https://tse2.mm.bing.net/th/id/OIP.QEpIMUsMi_ZLU4CN3cfXqgHaE8?rs=1&pid=ImgDetMain&o=7&rm=3" alt="">
+      <img src="https://www.cucinare.tv/wp-content/uploads/2018/12/18-12-27-Lujoso2.jpg" alt="Restaurante 2">
+      <img src="https://th.bing.com/th/id/OIP.8UMCY0N9desHisyht_GUJwHaEF?cb=iwc2&rs=1&pid=ImgDetMain" alt="Restaurante 3">
+      
+    </section>
+    <!-- Imágenes del restaurante -->
+    <section class="imagenes-restaurante">
+      <img src="https://tse2.mm.bing.net/th/id/OIP.QEpIMUsMi_ZLU4CN3cfXqgHaE8?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Restaurante 1">
+      <img src="https://www.cucinare.tv/wp-content/uploads/2018/12/18-12-27-Lujoso2.jpg" alt="Restaurante 2">
+      <img src="https://th.bing.com/th/id/OIP.8UMCY0N9desHisyht_GUJwHaEF?cb=iwc2&rs=1&pid=ImgDetMain" alt="Restaurante 3">
+
+    </section>
+
+    <!-- Video del restaurante -->
+    <section class="video">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/32T8Oja5Yn4" 
+        title="Video del Restaurante" frameborder="0" allowfullscreen></iframe>
+    </section>
+
+  
+
+  
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galería de Reseñas</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #000; /* fondo negro */
+      color: #FFD700; /* color dorado */
+      margin: 0;
+      padding: 20px;
+    }
+
+    #galeriaTableContainer {
+      width: 95%;
+      margin: 0 auto;
+    }
+
+#galeriaTableContainer h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2em;
+  color: #FFD700;
+  /* text-shadow: 0 0 5px #FFD700; /  / <-- Lo comentamos o borramos */
+}
+    
+
+    #addRowBtn {
+      background-color: #FFD700;
+      color: #000;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-bottom: 15px;
+      box-shadow: 0 0 5px #FFD700;
+    }
+
+    #addRowBtn:hover {
+      background-color: #e6c200;
+      box-shadow: 0 0 10px #FFD700;
+    }
+
+    #galeriaTable {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #111; /* un poco más claro que el fondo negro */
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    #galeriaTable th, #galeriaTable td {
+      border: 1px solid #FFD700;
+      padding: 12px;
+      text-align: center;
+    }
+
+    #galeriaTable th {
+      background-color: #222;
+      color: #FFD700;
+      font-size: 1.1em;
+    }
+
+    td[contenteditable="true"] {
+      background-color: #000;
+      color: #FFD700;
+      outline: none;
+    }
+
+    .actionBtn {
+      padding: 6px 12px;
+      margin: 2px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .editBtn {
+      background-color: #FFA500;
+      color: #000;
+    }
+
+    .editBtn:hover {
+      background-color: #e69500;
+      box-shadow: 0 0 5px #FFD700;
+    }
+
+    .deleteBtn {
+      background-color: #FF4500;
+      color: #fff;
+    }
+
+    .deleteBtn:hover {
+      background-color: #e03f00;
+      box-shadow: 0 0 5px #FFD700;
+    }
+
+    /* Scroll para tabla si hay muchas filas */
+    #galeriaTableContainer table {
+      display: block;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <section id="galeriaTableContainer">
+    <h2>Reseñas Visuales del Restaurante</h2>
+    
+    <button id="addRowBtn">➕ Agregar Reseña</button>
+
+    <table id="galeriaTable">
+      <thead>
+        <tr>
+          <th>Nombre del Cliente</th>
+          <th>Tipo</th>
+          <th>Comentario</th>
+          <th>Fecha de publicación</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Filas se agregarán dinámicamente -->
+      </tbody>
+    </table>
+  </section>
+
+  <script>
+    const tableBody = document.querySelector("#galeriaTable tbody");
+    const addRowBtn = document.getElementById("addRowBtn");
+
+    // Función para crear una fila
+    function createRow(nombre="", tipo="", comentario="", fecha="") {
+      const row = document.createElement("tr");
+
+      row.innerHTML = `
+        <td contenteditable="true">${nombre}</td>
+        <td contenteditable="true">${tipo}</td>
+        <td contenteditable="true">${comentario}</td>
+        <td contenteditable="true">${fecha}</td>
+        <td>
+          <button class="actionBtn editBtn">💾 Guardar</button>
+          <button class="actionBtn deleteBtn">🗑 Borrar</button>
+        </td>
+      `;
+
+      // Borrar fila
+      row.querySelector(".deleteBtn").addEventListener("click", () => {
+        row.remove();
+        saveToLocalStorage();
+      });
+
+      // Guardar fila
+      row.querySelector(".editBtn").addEventListener("click", () => {
+        alert("Fila guardada correctamente ✅");
+        saveToLocalStorage();
+      });
+
+      tableBody.appendChild(row);
+    }
+
+    // Botón agregar fila nueva
+    addRowBtn.addEventListener("click", () => {
+      createRow();
+    });
+
+    // Guardar tabla en LocalStorage
+    function saveToLocalStorage() {
+      const rows = [];
+      tableBody.querySelectorAll("tr").forEach(tr => {
+        const cells = tr.querySelectorAll("td");
+        rows.push({
+          nombre: cells[0].textContent,
+          tipo: cells[1].textContent,
+          comentario: cells[2].textContent,
+          fecha: cells[3].textContent
+        });
+      });
+      localStorage.setItem("galeriaResenas", JSON.stringify(rows));
+    }
+
+    // Cargar tabla desde LocalStorage
+    function loadFromLocalStorage() {
+      const data = JSON.parse(localStorage.getItem("galeriaResenas")) || [];
+      data.forEach(item => {
+        createRow(item.nombre, item.tipo, item.comentario, item.fecha);
+      });
+    }
+
+    // Cargar al iniciar
+    loadFromLocalStorage();
+
+    // Filas de ejemplo si no hay datos guardados
+    if (tableBody.querySelectorAll("tr").length === 0) {
+      createRow("Ana P.", "Imagen", "Me encanta la decoración y los colores", "15/08/2025");
+      createRow("José M.", "Video", "La cocina se ve muy organizada y limpia", "12/08/2025");
+      saveToLocalStorage();
+    }
+  </script>
+
+</body>
+</html>

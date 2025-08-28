@@ -1,0 +1,196 @@
+/* Tipografía y reset */
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+
+    background-image: url('fondo.jpg'); /* ruta correcta */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+
+
+
+
+
+
+
+
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #111;
+  color: white;
+}
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px; /* espacio suficiente a los lados */
+    background: rgba(0, 0, 0, 0.85);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    box-sizing: border-box;
+}
+
+.navbar .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2em;
+    font-weight: bold;
+    color: gold;
+}
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;          /* espacio entre palabras */
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;     /* permite que se ajusten en pantallas más pequeñas */
+}
+
+.navbar nav ul li a {
+    color: gold !important;      /* letras doradas */
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.navbar nav ul li a:hover {
+    color: white !important;
+}
+
+
+header {
+  background-color: #222;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px;
+}
+
+.logo {
+  height: 60px;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+}
+
+.menu li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contacto {
+  padding: 30px;
+  text-align: center;
+}
+
+.contacto h1 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: #ffc107;
+}
+
+.redes a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px;
+  color: #fff;
+  background-color: #444;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.redes a img {
+  width: 24px;
+  height: 24px;
+}
+
+.redes a:hover {
+  background-color: #ffc107;
+  color: black;
+}
+
+
+.redes a:hover {
+  background-color: #ffc107;
+  color: black;
+}
+
+.mapa iframe {
+  margin-top: 20px;
+  border-radius: 12px;
+}
+
+.buscador {
+  margin-top: 50px;
+}
+
+.buscador input[type="text"] {
+  padding: 10px;
+  width: 250px;
+  border-radius: 6px;
+  border: none;
+}
+
+.buscador button {
+  padding: 10px 15px;
+  border: none;
+  background-color: #ffc107;
+  color: black;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.plataformas {
+  margin-top: 50px;
+}
+
+.iconos-plataformas {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 15px;
+}
+
+.iconos-plataformas img {
+  width: 80px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.iconos-plataformas img:hover {
+  transform: scale(1.1);
+}
+
+footer {
+  text-align: center;
+  margin-top: 50px;
+  padding: 20px;
+  background-color: #000;
+}
+
+.logo-final {
+  width: 300px;
+  height: auto;
+  
+}
